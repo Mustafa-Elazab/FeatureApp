@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.credit_book.operation.OperationCreditFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <include
+                android:id="@+id/app_bar"
+                layout="@layout/custom_back_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/cash_radio"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:layout_weight="1"
+                            android:text="@string/cash" />
+
+                        <RadioButton
+                            android:id="@+id/credit_radio"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            android:layout_weight="1"
+                            android:text="@string/installment" />
+                    </RadioGroup>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cash_operation_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/radio_group">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_cash_operation"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="0.00EGP"
+                            android:imeOptions="actionDone"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="Cash" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cash_date_picker_tv"
+                        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/date_picker_raduis_shape"
+                        android:drawableStart="@drawable/calendar_range"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:padding="@dimen/_4sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="@id/cash_operation_edt"
+                        app:layout_constraintTop_toBottomOf="@id/cash_operation_edt"
+                        tools:text="2023-02-22"
+
+                        />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cash_operation_note_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cash_date_picker_tv">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_cash_operation_note"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="Enter details"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/GrayBlue"
+                            android:textColorHint="@color/Green"
+                           />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cash_operation_img"
+                        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/date_picker_raduis_shape"
+                        android:drawableStart="@drawable/camera_outline"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:padding="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="@id/cash_operation_note_edt"
+                        app:layout_constraintTop_toBottomOf="@id/cash_operation_note_edt"
+                        android:text="@string/add_image"
+
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/installment_product_name_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:visibility="gone"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/radio_group">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_installment_product_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="Product Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="Cash" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/installment_product_price_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/installment_product_name_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_installment_product_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="Product Price"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="Cash" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/installment_product_first_paid_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/installment_product_price_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_installment_product_first_paid"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="First Paid"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="First Paid" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/installment_product_months_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/installment_product_first_paid_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_installment_product_months"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="Months To Pay"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="Months To Pay" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/installment_product_percentage_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/installment_product_months_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_installment_product_percentage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:hint="Percentage"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="Percentage" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/pay_date_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:errorEnabled="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/installment_product_percentage_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_pay_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:clickable="true"
+                            android:drawableEnd="@drawable/calendar_range"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:focusable="false"
+                            android:hint="5-6-2023"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textColor="@color/Green"
+                            android:textColorHint="@color/Green"
+                            tools:text="Percentage" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/save_btn"
+                        style="@style/TextAppearance.MdcTypographyStyles.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:background="@drawable/rounded_corner"
+                        android:text="@string/validate"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

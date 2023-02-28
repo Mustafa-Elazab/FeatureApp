@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.cash_book.add_cash.AddCashOperationFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            >
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <include
+                android:id="@+id/app_bar"
+                layout="@layout/custom_back_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/category_constraint"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/cash_radio"
+                        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_weight="1"
+                        android:text="@string/income" />
+
+                    <RadioButton
+                        android:id="@+id/credit_radio"
+                        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_weight="1"
+                        android:text="@string/expense" />
+                </RadioGroup>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cash_operation_tv"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="0"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/egp_tv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radio_group" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/egp_tv"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="EGP"
+                    app:layout_constraintBottom_toBottomOf="@id/cash_operation_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cash_operation_tv"
+                    app:layout_constraintTop_toTopOf="@id/cash_operation_tv" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/category_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Blue"
+                app:layout_constraintBottom_toTopOf="@id/btn_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/category_tv"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:text="@string/category"
+                    android:textColor="@color/GrayLight"
+                    app:layout_constraintBottom_toTopOf="@id/category_value_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/category_value_tv"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:text="@string/select_category"
+                    android:textColor="@color/GrayLight"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save"
+                style="@style/TextAppearance.MdcTypographyStyles.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:background="@color/Green"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/keypadTableLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/category_constraint" />
+
+            <TextView
+                android:id="@+id/txt_expression"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="end"
+                android:textColor="#aaaaaa"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/category_constraint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TableLayout
+                android:id="@+id/keypadTableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:shrinkColumns="*"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_save">
+
+                <TableRow android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_clear"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="AC" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_back"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/arrow_collapse_left"
+                        android:text="back" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_mod"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="%" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_multi"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="X" />
+
+                </TableRow>
+
+                <TableRow android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_7"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="7" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_8"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="8" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_9"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="9" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_div"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="/" />
+
+
+                </TableRow>
+
+                <TableRow android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_4"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:text="4" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_5"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="5" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_6"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="6" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="+" />
+
+                </TableRow>
+
+                <TableRow android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_1"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="1" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_2"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="2" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_3"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="3" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="-" />
+
+
+                </TableRow>
+
+                <TableRow android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_00"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+
+                        android:layout_margin="4dp"
+                        android:text="00" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_0"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_dot"
+                        style="@style/NumberActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:text="." />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_result"
+                        style="@style/ActionButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:text="=" />
+                </TableRow>
+
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

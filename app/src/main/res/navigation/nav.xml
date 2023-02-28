@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/creditBookFragment">
+
+    <fragment
+        android:id="@+id/cashBookFragment"
+        android:name="com.example.featureapp.presentation.fragment.cash_book.cash.CashBookFragment"
+        android:label="fragment_cash_book"
+        tools:layout="@layout/fragment_cash_book">
+        <action
+            android:id="@+id/action_cashBookFragment_to_addCashOperationFragment"
+            app:destination="@id/addCashOperationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditBookFragment"
+        android:name="com.example.featureapp.presentation.fragment.credit_book.credit.CreditBookFragment"
+        android:label="fragment_credit_book"
+        tools:layout="@layout/fragment_credit_book">
+        <action
+            android:id="@+id/action_creditBookFragment_to_addCustomerFragment"
+            app:destination="@id/addCustomerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.featureapp.presentation.fragment.more.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_businessCardFragment"
+            app:destination="@id/businessCardFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_visaCardFragment"
+            app:destination="@id/visaCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.example.featureapp.presentation.fragment.credit_book.add_address.AddAddressFragment"
+        android:label="AddAddressFragment"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_customerFragment"
+            app:destination="@id/customerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCustomerFragment"
+        android:name="com.example.featureapp.presentation.fragment.credit_book.add_customer.AddCustomerFragment"
+        android:label="AddCustomerFragment"
+        tools:layout="@layout/fragment_add_customer">
+        <action
+            android:id="@+id/action_addCustomerFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+        <action
+            android:id="@+id/action_addCustomerFragment_to_customerFragment"
+            app:destination="@id/customerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.example.featureapp.presentation.fragment.credit_book.customer.CustomerFragment"
+        android:label="CustomerFragment"
+        tools:layout="@layout/fragment_customer">
+        <action
+            android:id="@+id/action_customerFragment_to_operationCreditFragment"
+            app:destination="@id/operationCreditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/operationCreditFragment"
+        android:name="com.example.featureapp.presentation.fragment.credit_book.operation.OperationCreditFragment"
+        android:label="OperationCreditFragment"
+        tools:layout="@layout/fragment_operation_credit">
+        <argument
+            android:name="isGot"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCashOperationFragment"
+        android:name="com.example.featureapp.presentation.fragment.cash_book.add_cash.AddCashOperationFragment"
+        android:label="AddCashOperationFragment"
+        tools:layout="@layout/fragment_add_cash_operation">
+        <action
+            android:id="@+id/action_addCashOperationFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <argument
+            android:name="model"
+            app:nullable="true"
+            android:defaultValue="@null"
+            app:argType="com.example.featureapp.presentation.fragment.cash_book.category.data.CategoryModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.featureapp.presentation.fragment.cash_book.category.CategoryFragment"
+        android:label="CategoryFragment"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_addCashOperationFragment"
+            app:destination="@id/addCashOperationFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@navigation/nav"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/businessCardFragment"
+        android:name="com.example.featureapp.presentation.fragment.more.business.BusinessCardFragment"
+        android:label="BusinessCardFragment" >
+        <action
+            android:id="@+id/action_businessCardFragment_to_showBusinessCardFragment"
+            app:destination="@id/showBusinessCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/visaCardFragment"
+        android:name="com.example.featureapp.presentation.fragment.more.visa.VisaCardFragment"
+        android:label="VisaCardFragment" >
+        <action
+            android:id="@+id/action_visaCardFragment_to_showCreditCardFragment"
+            app:destination="@id/showCreditCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showBusinessCardFragment"
+        android:name="com.example.featureapp.presentation.fragment.more.business.ShowBusinessCardFragment"
+        android:label="ShowBusinessCardFragment" />
+    <fragment
+        android:id="@+id/showCreditCardFragment"
+        android:name="com.example.featureapp.presentation.fragment.more.visa.ShowCreditCardFragment"
+        android:label="ShowCreditCardFragment" >
+        <argument
+            android:name="model"
+            app:argType="com.example.featureapp.domain.model.VisaModel"
+            app:nullable="true" />
+    </fragment>
+</navigation>

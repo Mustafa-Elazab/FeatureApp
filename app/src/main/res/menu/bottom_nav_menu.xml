@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/creditBookFragment"
+        android:icon="@drawable/dashboard_icon_selector"
+        android:title="Credit"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/cashBookFragment"
+        android:icon="@drawable/stats_icon_selector"
+        android:title="Cash"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/profile_icon_selector"
+        android:title="More"
+        app:showAsAction="ifRoom" />
+
+</menu>

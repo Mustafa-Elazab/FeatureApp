@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.credit_book.customer.CustomerFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <include
+                android:id="@+id/app_bar"
+                layout="@layout/custom_back_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/general_balance_tv"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:text="@string/general_balance"
+                        android:textColor="@color/Blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balance_type_tv"
+                        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@string/i_got"
+                        android:textColor="@color/GrayBlue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/general_balance_tv" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balance_amount_tv"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="50000 EGP"
+                        android:textColor="@color/Green"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/balance_type_tv"
+                        app:layout_constraintWidth_percent=".5" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/note_img"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:background="@drawable/round_button"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/balance_amount_tv"
+                        app:layout_constraintStart_toEndOf="@id/balance_amount_tv"
+                        app:layout_constraintTop_toTopOf="@id/balance_amount_tv"
+                        app:layout_constraintWidth_percent=".14"
+                        app:srcCompat="@drawable/notebook_edit_outline" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/call_img"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:background="@drawable/round_button"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/balance_amount_tv"
+                        app:layout_constraintStart_toEndOf="@id/note_img"
+                        app:layout_constraintTop_toTopOf="@id/balance_amount_tv"
+                        app:layout_constraintWidth_percent=".14"
+                        app:srcCompat="@drawable/phone_outline" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/message_img"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:background="@drawable/round_button"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/balance_amount_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/call_img"
+                        app:layout_constraintTop_toTopOf="@id/balance_amount_tv"
+                        app:layout_constraintWidth_percent=".14"
+                        app:srcCompat="@drawable/message_reply_outline" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/operation_tv"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:text="@string/operation"
+                        android:textColor="@color/Blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/balance_amount_tv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/operation_num_tv"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:text="(10)"
+                        android:textColor="@color/GrayBlue"
+                        app:layout_constraintStart_toEndOf="@id/operation_tv"
+                        app:layout_constraintTop_toBottomOf="@id/balance_amount_tv" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_operation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/operation_tv"
+                        tools:listitem="@layout/operation_list_item" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/i_got_btn"
+                style="@style/TextAppearance.MdcTypographyStyles.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@color/GreenLight"
+                android:text="@string/i_got"
+                android:textAllCaps="true"
+                android:textColor="@color/Green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintWidth_percent=".42" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/i_gave_btn"
+                style="@style/TextAppearance.MdcTypographyStyles.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@color/RedLight"
+                android:text="@string/i_gave"
+                android:textAllCaps="true"
+                android:textColor="@color/Red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintWidth_percent=".42" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

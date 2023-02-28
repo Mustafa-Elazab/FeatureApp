@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.more.visa.ShowCreditCardFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <include
+                android:id="@+id/app_bar"
+                layout="@layout/custom_back_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    app:cardElevation="@dimen/_4sdp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/credit_card_img">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/bank_name_tv"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:text="@string/company_name"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/card_number_tv"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_100sdp"
+                            android:text="Card Number"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/card_holder_tv"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:text="Card Holder"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@+id/card_number_tv"
+                            app:layout_constraintTop_toBottomOf="@id/card_number_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/card_expiry_tv"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:text="Expiry Date"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/card_number_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/card_cvv_tv"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:text="CVV"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/card_holder_tv" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/save_visa_btn"
+                    style="@style/TextAppearance.MdcTypographyStyles.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:background="@drawable/rounded_corner"
+                    android:text="@string/validate"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

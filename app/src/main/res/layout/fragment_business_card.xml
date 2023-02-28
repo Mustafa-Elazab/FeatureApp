@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.more.business.BusinessCardFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <include
+                android:id="@+id/app_bar"
+                layout="@layout/custom_back_app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:cardCornerRadius="@dimen/_20sdp"
+                        app:cardElevation="@dimen/_4sdp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/card_business_image">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/name_tv"
+                                style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_28sdp"
+                                android:layout_marginTop="@dimen/_24sdp"
+                                android:text="Card Name"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/work_tv"
+                                style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:text="Work"
+                                android:textColor="@color/white"
+                                app:layout_constraintStart_toStartOf="@id/name_tv"
+                                app:layout_constraintTop_toBottomOf="@id/name_tv" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/location_tv"
+                                style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:drawableStart="@drawable/map_marker"
+                                android:drawablePadding="@dimen/_8sdp"
+                                android:text="Work"
+                                android:textColor="@color/white"
+                                app:layout_constraintStart_toStartOf="@id/work_tv"
+                                app:layout_constraintTop_toBottomOf="@id/work_tv" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/phone_tv"
+                                style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:drawableStart="@drawable/phone"
+                                android:drawablePadding="@dimen/_8sdp"
+                                android:text="@string/phone"
+                                android:textColor="@color/white"
+                                app:layout_constraintStart_toStartOf="@id/location_tv"
+                                app:layout_constraintTop_toBottomOf="@id/location_tv" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/email_tv"
+                                style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:drawableStart="@drawable/email_variant"
+                                android:drawablePadding="@dimen/_8sdp"
+                                android:text="@string/email"
+                                android:textColor="@color/white"
+                                app:layout_constraintStart_toStartOf="@id/phone_tv"
+                                app:layout_constraintTop_toBottomOf="@id/phone_tv" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/company_name_tv"
+                                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:maxWidth="@dimen/_60sdp"
+                                android:maxLines="2"
+                                android:text="@string/company_name"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                app:autoSizeTextType="uniform"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/phone_tv" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/name_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="@string/name"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            tools:text="@string/name" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/work_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_work"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="@string/work"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            tools:text="@string/work" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/phone_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/work_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="@string/phone"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            tools:text="@string/phone" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/address_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phone_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="@string/address"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            tools:text="@string/address" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/company_name_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_company_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="@string/company_name"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            tools:text="@string/company_name" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/email_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/company_name_edt">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            tools:text="@string/email" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/save_btn"
+                        style="@style/TextAppearance.MdcTypographyStyles.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:background="@drawable/rounded_corner"
+                        android:text="@string/validate"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/email_edt" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
